@@ -1,4 +1,4 @@
-package mangei.cashmanagement.doa;
+package mangei.cashmanagement.dao;
 
 import mangei.cashmanagement.pojo.Buchung;
 

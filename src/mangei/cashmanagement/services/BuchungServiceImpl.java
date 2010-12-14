@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 
-import mangei.cashmanagement.doa.BuchungDAO;
-import mangei.cashmanagement.doa.BuchungDAOMysqlImpl;
+import mangei.cashmanagement.dao.BuchungDAO;
+import mangei.cashmanagement.dao.BuchungDAOMysqlImpl;
 import mangei.cashmanagement.pojo.Buchung;
 import mangei.cashmanagement.pojo.Buchungskategorie;
 import mangei.cashmanagement.pojo.Konto;

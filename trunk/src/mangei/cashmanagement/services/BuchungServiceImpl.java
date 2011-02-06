@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+import mangei.cashmanagement.ExceptionManager;
 
 import mangei.cashmanagement.dao.BuchungDAO;
 import mangei.cashmanagement.dao.BuchungDAOMysqlImpl;
@@ -34,8 +35,7 @@ public class BuchungServiceImpl implements BuchungService {
 		try {
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cashmanagementdb","root","");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			ExceptionManager.logException(e);
 		}
 
 		buchungDAO = new BuchungDAOMysqlImpl(con);
@@ -49,23 +49,27 @@ public class BuchungServiceImpl implements BuchungService {
 	}
 	
 	@Override
-	public void addBuchung(Buchung buchung) {
-		
+	public Buchung saveBuchung(Buchung buchung) {
+            if(buchung.getId() == null) {
+                return buchungDAO.insert(buchung);
+            } else {
+                return buchungDAO.update(buchung);
+            }
 	}
 
 	@Override
-	public void addBuchungskategorie(Buchungskategorie kategorie) {
-		
+	public Buchungskategorie saveBuchungskategorie(Buchungskategorie kategorie) {
+            return null;
 	}
 
 	@Override
-	public void addKonto(Konto konto) {
-		
+	public Konto saveKonto(Konto konto) {
+            return null;
 	}
 
 	@Override
-	public void addKontokategorie(Kontokategorie kategorie) {
-		
+	public Kontokategorie saveKontokategorie(Kontokategorie kategorie) {
+            return null;
 	}
 
 	@Override

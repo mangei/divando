@@ -10,7 +10,8 @@ public interface AbstractDAO <T> {
 	
 	public List<T> getAll();
 	public T get(Long id);
-	public T save();
+        public T insert(T t);
+	public T update(T t);
 	public void delete(T t);
 	
 }

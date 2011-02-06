@@ -9,10 +9,10 @@ import mangei.cashmanagement.pojo.Kontokategorie;
 
 public interface BuchungService {
 
-	public void addBuchung(Buchung buchung);
-	public void addKonto(Konto konto);
-	public void addBuchungskategorie(Buchungskategorie kategorie);
-	public void addKontokategorie(Kontokategorie kategorie);
+	public Buchung saveBuchung(Buchung buchung);
+	public Konto saveKonto(Konto konto);
+	public Buchungskategorie saveBuchungskategorie(Buchungskategorie kategorie);
+	public Kontokategorie saveKontokategorie(Kontokategorie kategorie);
 	
 	public List<Kontokategorie> getKontokategorien();
 	public List<Konto> getKonten();

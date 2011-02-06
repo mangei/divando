@@ -1,18 +1,14 @@
 package mangei.cashmanagement.gui;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import mangei.cashmanagement.gui.layout.VerticalLayout;
-import mangei.cashmanagement.services.BuchungService;
-import mangei.cashmanagement.services.BuchungServiceImpl;
 
 public class MainWindow extends JFrame {
 
@@ -22,8 +18,6 @@ public class MainWindow extends JFrame {
 	private BuchungenView buchungenView;
 	private JButton bWelcome;
 	private JButton bBuchungen;
-	
-	private BuchungService buchungService = BuchungServiceImpl.getInstance();
 	
 	public MainWindow() {
 		sidePanel = createSidePanel();
@@ -58,7 +52,7 @@ public class MainWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if(buchungenView == null) {
-					buchungenView = new BuchungenView(buchungService);
+					buchungenView = new BuchungenView();
 				}
 				setMainPanel(buchungenView);
 			}

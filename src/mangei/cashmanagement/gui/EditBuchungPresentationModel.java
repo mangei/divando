@@ -56,7 +56,7 @@ public class EditBuchungPresentationModel
         }
 
         public void actionPerformed(ActionEvent ae) {
-System.out.println("1");
+            System.out.println("1");
         }
     }
 
